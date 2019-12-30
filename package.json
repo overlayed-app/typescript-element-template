@@ -1,0 +1,74 @@
+{
+  "name": "typescript-element-template",
+  "version": "1.0.0",
+  "description": "Template repository for a typescript element",
+  "main": "dist/index.min.js",
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "eslint .",
+    "build": "rollup -c",
+    "test": "jest --coverage",
+    "release": "standard-version -a --preset @overlayed-app/dist-tagger"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "standard-version": {
+    "scripts": {
+      "prerelease": "npm run lint && npm run build && npm run test",
+      "postcommit": "npx @overlayed-app/conventional-changelog-dist-tagger"
+    },
+    "skip": {
+      "tag": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/overlayed-app/typescript-element-template.git"
+  },
+  "keywords": [
+    "template",
+    "element",
+    "overlayed"
+  ],
+  "author": "Ben Greenier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/overlayed-app/typescript-element-template/issues"
+  },
+  "homepage": "https://github.com/overlayed-app/typescript-element-template#readme",
+  "devDependencies": {
+    "@overlayed-app/conventional-changelog-dist-tagger": "^4.0.0",
+    "@overlayed-app/loadable-element-tests": "^1.0.0",
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-typescript": "^2.0.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.2",
+    "@types/react": "^16.9.17",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.17.0",
+    "jest": "^24.9.0",
+    "react-dom": "^16.12.0",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel-minify": "^9.1.1",
+    "rollup-plugin-json": "^4.0.0",
+    "standard-version": "^7.0.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@overlayed-app/loadable-element": "^1.0.1",
+    "react": "^16.12.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
